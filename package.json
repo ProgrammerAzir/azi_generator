@@ -1,0 +1,33 @@
+{
+  "name": "azi_generator",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon --watch **/*.ts --exec ts-node ./server/server.ts -P ./server/tsconfig.json",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "start": "ts-node ./server/server.ts -P ./server/tsconfig.json"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.44.2",
+    "ant-design-vue": "^4.2.3",
+    "axios": "^1.7.2",
+    "express": "^4.19.2",
+    "pinia": "^2.1.7",
+    "ts-morph": "^23.0.0",
+    "vue": "^3.4.29",
+    "vue-router": "^4.4.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.10",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "nodemon": "^3.1.4",
+    "sass": "^1.77.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.3.1",
+    "vue-tsc": "^2.0.21"
+  }
+}
