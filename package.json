@@ -13,7 +13,6 @@
     "@supabase/supabase-js": "^2.44.2",
     "ant-design-vue": "^4.2.3",
     "axios": "^1.7.2",
-    "body-parse": "^0.1.0",
     "express": "^4.19.2",
     "monaco-editor": "^0.50.0",
     "pinia": "^2.1.7",
