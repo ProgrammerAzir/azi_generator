@@ -10,7 +10,7 @@ import Generator from "../views/generator/index.vue"
 import Config from "../views/config/index.vue"
 export const constantRoutes: RouteRecordRaw[] = [
   {
-    path: "/:pathMatch(.*)*",
+    path: "/",
     name: "layout",
     meta: {
       title: "supabase代码生成器",
@@ -18,27 +18,27 @@ export const constantRoutes: RouteRecordRaw[] = [
     component: Layout,
     children: [
       {
-        path: "/enum",
+        path: "enum",
         name: "enum",
         component:Enum,
       },
       {
-        path: "/dict",
+        path: "dict",
         name: "dict",
         component: Dict,
       },
       {
-        path: "/generator",
+        path: "generator",
         name: "generator",
         component:Generator,
       },
       {
-        path: "/config",
+        path: "config",
         name: "config",
         component: Config,
       },
     ],
-  },
+  }
 ];
 const router = createRouter({
   history: createWebHistory("/app"),

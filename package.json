@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "nodemon --watch **/*.ts --exec ts-node ./server/server.ts -P ./server/tsconfig.json",
+    "dev": "nodemon --watch server/**/*.ts --ignore **/basetype.ts --exec ts-node ./server/server.ts -P ./server/tsconfig.json",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
     "start": "ts-node ./server/server.ts -P ./server/tsconfig.json"
@@ -13,7 +13,9 @@
     "@supabase/supabase-js": "^2.44.2",
     "ant-design-vue": "^4.2.3",
     "axios": "^1.7.2",
+    "body-parse": "^0.1.0",
     "express": "^4.19.2",
+    "monaco-editor": "^0.50.0",
     "pinia": "^2.1.7",
     "ts-morph": "^23.0.0",
     "vue": "^3.4.29",
@@ -28,6 +30,7 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.2.2",
     "vite": "^5.3.1",
+    "vite-plugin-monaco-editor": "^1.1.0",
     "vue-tsc": "^2.0.21"
   }
 }

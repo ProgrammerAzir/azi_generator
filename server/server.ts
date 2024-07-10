@@ -4,7 +4,9 @@ import fs from "fs";
 import path from "path";
 import url from "url";
 import genRouter from './router/genRouter'
+
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+
 async function main() {
   const PORT = 8100;
   const serverApp = express();
