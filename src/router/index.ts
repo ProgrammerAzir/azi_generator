@@ -8,6 +8,7 @@ import Enum from "../views/enum/index.vue"
 import Dict from "../views/dict/index.vue"
 import Generator from "../views/generator/index.vue"
 import Config from "../views/config/index.vue"
+import PageEditor from "../views/generator/compenents/PageEditor.vue";
 export const constantRoutes: RouteRecordRaw[] = [
   {
     path: "/",
@@ -31,6 +32,10 @@ export const constantRoutes: RouteRecordRaw[] = [
         path: "generator",
         name: "generator",
         component:Generator,
+      }, {
+        path: "generator/page/:id",
+        name: "generator_page",
+        component:PageEditor,
       },
       {
         path: "config",

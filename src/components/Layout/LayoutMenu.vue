@@ -25,9 +25,7 @@ const router = useRouter()
 const route = useRoute()
 
 const selectedKeys = ref<string[]>([""]);
-watch(()=>route.path,()=>{  
-  selectedKeys.value=[route.path]
-},{immediate:true})
+
 const menuTree = ref([
   {
     label: "枚举类型",
@@ -47,7 +45,6 @@ const menuTree = ref([
   {
     label: "配置",
     icon: () => h(SettingOutlined),
-
     key: "/config",
   },
 ]);
@@ -55,4 +52,13 @@ const select:MenuProps['onSelect'] = ({ item, key, selectedKeys })=>{
   if(typeof key =='string')
   router.push(key)
 }
+watch(()=>route.path,()=>{  
+
+  const path = menuTree.value.find(item=>{
+    return route.path.indexOf(item.key)>-1
+  })
+  console.log(path?.key);
+  
+  selectedKeys.value=[path?.key||'']
+},{immediate:true})
 </script>
