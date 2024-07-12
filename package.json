@@ -16,6 +16,7 @@
     "express": "^4.19.2",
     "monaco-editor": "^0.50.0",
     "pinia": "^2.1.7",
+    "radash": "^12.1.0",
     "ts-morph": "^23.0.0",
     "vue": "^3.4.29",
     "vue-grid-layout": "^3.0.0-beta1",

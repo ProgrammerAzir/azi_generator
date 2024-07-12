@@ -1,0 +1,37 @@
+[
+    {
+        "name":"查询权限",
+        "code":"permission",
+        "type":"permission_type",
+        "description":null,
+        "list":[
+            {
+                "lable":"查询",
+                "value":"SELECT",
+                "color":"#000000"
+            } ,          {
+                "lable":"添加",
+                "value":"INSERT",
+                "color":"#000000"
+            }
+        ]
+    },
+    {
+        "name":"性别",
+        "code":"sex",
+        "type":null,
+        "description":null,
+        "list":[
+            {
+                "lable":"男",
+                "value":"1",
+                "color":"#000000"
+            },
+            {
+                "lable":"女",
+                "value":"0",
+                "color":"#000000"
+            }
+        ]
+    }
+]
