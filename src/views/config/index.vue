@@ -109,8 +109,7 @@ const isEdit = ref(true)
 watch(formState,()=>{
     if(formState.code!=baseType.code){
         isEdit.value=false
-    }
-    
+    } 
 })
 const onFinish:FormProps["onFinish"]=(value)=> {
     baseType.code = formState.code
@@ -120,14 +119,9 @@ const onFinish:FormProps["onFinish"]=(value)=> {
     })
     //保存起来
 }
-
-onMounted(async ()=>{
-   const res = await axios.get('/api/config/type')
-   if(res.data.code){
-    formState.code = res.data.code
-    baseType.code = res.data.code
-    editor?.setValue?.(res.data.code)
-   }
-   
+watch(()=>baseType.code,()=>{
+  formState.code = baseType.code
+    editor?.setValue?.(baseType.code)
 })
+
 </script>
