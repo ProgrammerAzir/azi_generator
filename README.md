@@ -1,5 +1,18 @@
-# Vue 3 + TypeScript + Vite
+# AZI GENERATOR(开发中)
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+基于supabase开发的低代码工具，其根据supabase生成的typescript的Database类型进行解析，进而生成Vue的模板代码。
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+# （一）
+枚举类型 
+字典管理
+低代码编辑器
+配置
+后台项目模板（无菜单配置）
+
+# （二）
+用户权限系统增强
+sql日志
+字典管理(国际化)
+低代码编辑器（权限生成）
+后台项目模板（菜单配置）
+AI模型整合
