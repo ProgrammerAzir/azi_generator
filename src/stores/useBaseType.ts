@@ -1,6 +1,6 @@
 import axios from "axios";
 import { defineStore } from "pinia";
-import { onMounted, ref } from "vue";
+import { ref } from "vue";
 
 const useBaseType = defineStore('useBaseType',()=>{
     const code = ref<string>('')

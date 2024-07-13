@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "name": "订单管理",
+    "row": [
+      {
+        "key": "created_at",
+        "lable": "创建时间",
+        "type": "string",
+        "dict": null
+      },
+      {
+        "key": "sex",
+        "lable": "性别",
+        "type": "string",
+        "dict_code": "sex"
+      }
+    ],
+    "add_form": [
+      {
+        "key": "created_at",
+        "lable": "创建时间",
+        "type": "string",
+        "dict": null,
+        "component": "DatePicker",
+        "rules": null
+      },
+      {
+        "key": "sex",
+        "lable": "性别",
+        "type": "string",
+        "dict_code": "sex",
+        "component": "Select",
+        "required":true,
+        "rules": null
+      },
+      {
+        "key": "url",
+        "lable": "网址",
+        "type": "string",
+        "dict_code": null,
+        "component": "Input",
+        "required":false,
+        "rules": ["^(http|https)://"]
+      }
+    ]
+  }
+]

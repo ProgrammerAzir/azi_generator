@@ -1,37 +1,71 @@
 [
-    {
-        "name":"查询权限",
-        "code":"permission",
-        "type":"permission_type",
-        "description":null,
-        "list":[
-            {
-                "lable":"查询",
-                "value":"SELECT",
-                "color":"#000000"
-            } ,          {
-                "lable":"添加",
-                "value":"INSERT",
-                "color":"#000000"
-            }
-        ]
-    },
-    {
-        "name":"性别",
-        "code":"sex",
-        "type":null,
-        "description":null,
-        "list":[
-            {
-                "lable":"男",
-                "value":"1",
-                "color":"#000000"
-            },
-            {
-                "lable":"女",
-                "value":"0",
-                "color":"#000000"
-            }
-        ]
-    }
+  {
+    "name": "查询权限",
+    "code": "permission",
+    "type": "permission_type",
+    "description": null,
+    "list": [
+      {
+        "lable": "查询",
+        "value": "SELECT",
+        "color": "#000000"
+      },
+      {
+        "lable": "添加",
+        "value": "INSERT",
+        "color": "#111"
+      },
+      {
+        "lable": "编辑",
+        "value": "UPDATE",
+        "color": "#001122"
+      }
+    ]
+  },
+  {
+    "name": "性别",
+    "code": "sex",
+    "type": null,
+    "description": null,
+    "list": [
+      {
+        "lable": "男",
+        "value": "1",
+        "color": "#000000"
+      },
+      {
+        "lable": "女",
+        "value": "0",
+        "color": "1231231234"
+      }
+    ]
+  },
+  {
+    "name": "语言",
+    "code": "language",
+    "type": null,
+    "list": [
+      {
+        "lable": "中文",
+        "value": "cn",
+        "color": ""
+      },
+      {
+        "lable": "英文",
+        "value": "en",
+        "color": ""
+      },
+      {
+        "lable": "<a style=\"color:#0aeb64\">aa</a>",
+        "value": "",
+        "color": ""
+      },
+      {
+        "lable": "",
+        "value": "",
+        "color": ""
+      }
+    ],
+    "description": "世界各地的语言"
+  }
 ]

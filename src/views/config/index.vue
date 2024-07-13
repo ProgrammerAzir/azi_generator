@@ -10,13 +10,13 @@
       <a-form-item label="baseType" name="code">
         <div style="display: flex;flex-flow: row wrap;">
           <CodeEditor
-            :style="{ height: '200px', width: '600px',minWidth:'600px',marginRight:'20px',marginBottom:'20px' }"
+            :style="{ height: '300px', width: '600px',minWidth:'600px',marginRight:'20px',marginBottom:'20px' }"
             :value="formState.code"
             @change="(value) => (formState.code = value)"
             @editor="onReady"
           ></CodeEditor>
           <a-upload-dragger
-            style="width: 300px;"
+            style="width: 300px; margin-bottom: 20px;"
             v-model:file-list="fileList"
             name="file"
             :max-count="1"
@@ -109,6 +109,8 @@ const isEdit = ref(true)
 watch(formState,()=>{
     if(formState.code!=baseType.code){
         isEdit.value=false
+    }else{
+      isEdit.value = true
     } 
 })
 const onFinish:FormProps["onFinish"]=(value)=> {

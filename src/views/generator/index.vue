@@ -1,6 +1,6 @@
 <template>
   <div class="r">
-    <div style="float: right; margin: 10px">
+    <div >
       <a-button type="primary">新增</a-button>
     </div>
     <a-table :dataSource="dataSource" :columns="columns">

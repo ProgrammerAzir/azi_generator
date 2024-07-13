@@ -1,5 +1,6 @@
 import express, { Router } from "express";
 import { JsonFile, typeAst } from "../../dao/dao";
+import { clone } from "radash";
 const router = Router();
 interface DataItem {
   name: string;
@@ -19,8 +20,7 @@ router.get("/", async (req, res, next) => {
 router.post("/", express.json(), async (req, res, next) => {
   const body = req.body;
   const { add, edit, del } = body;
-  let datalist = (await JsonFile.readJsonFile("dict/dict.json")) as DataItem[];
-
+  let datalist = (await JsonFile.readJsonFile("dict/dict.json")) as DataItem[];  
   if (add) {
     // 检查是否已存在相同code的数据项，如果不存在则添加
     if (!datalist.some((item) => item.code === add.code)) {
@@ -54,7 +54,7 @@ router.post("/", express.json(), async (req, res, next) => {
   }
 
   // 写入文件（这里假设JsonFile有writeJsonFile方法）
-  await JsonFile.writeJsonFile("dict/dict.json", datalist);
+  await JsonFile.writeJsonFile("dict/dict.json", clone(datalist) );
 
   // 响应更新后的数据列表（可选）
   res.json(datalist);

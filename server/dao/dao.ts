@@ -128,7 +128,7 @@ class FileManager {
    * @param data
    * @returns
    */
-  async writeJsonFile(filename: string, data: any):Promise<Object|NodeJS.ErrnoException> {
+  async writeJsonFile(filename: string, data: any):Promise<Object|NodeJS.ErrnoException> {    
     if (!filename.endsWith(this.endwithStr)) {
       return Promise.reject(
         new Error("Filename must end with " + this.endwithStr)
@@ -144,7 +144,7 @@ class FileManager {
         if (err) {
           reject(err);
         } else {
-          resolve(JSON.parse(data));
+          resolve(data);
         }
       });
     });

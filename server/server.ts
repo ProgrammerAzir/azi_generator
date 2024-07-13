@@ -3,7 +3,7 @@ import { createServer as createViteServer } from "vite";
 import fs from "fs";
 import path from "path";
 import url from "url";
-import genRouter from './router/genRouter'
+import router from './router/router'
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 
@@ -31,7 +31,7 @@ async function main() {
       res.status(400).set({ "Content-Type": "text/html" }).end(error);
     }
   });
-  serverApp.use("/api",genRouter );
+  serverApp.use("/api",router );
   return serverApp;
 }
 main();
