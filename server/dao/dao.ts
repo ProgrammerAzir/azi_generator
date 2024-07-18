@@ -71,8 +71,8 @@ class LoadType {
     const type = this.getTypeForTypeKey(rowType,'url')
     let obj = {} as any
     rowType.getProperties().forEach(s=>{
-        console.log(s.getName());
-        console.log(s.getValueDeclaration());
+        // console.log(s.getName());
+        // console.log(s.getValueDeclaration());
         obj[s.getName()] = this.getTypeForTypeKey(rowType,s.getName())?.getText()
     })
     return obj
@@ -99,8 +99,8 @@ class LoadType {
     let obj = {} as any
 
     EnumsType.getProperties().forEach(s=>{
-      console.log(s.getName());
-      console.log(s.getValueDeclaration());
+      // console.log(s.getName());
+      // console.log(s.getValueDeclaration());
       const value = this.getTypeForTypeKey(EnumsType,s.getName())?.getText()||''
       obj[s.getName()] = extractQuotedWords(value)
     })

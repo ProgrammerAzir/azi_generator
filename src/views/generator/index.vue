@@ -1,9 +1,19 @@
 <template>
   <div class="r">
-    <div >
+    <div>
       <a-button type="primary">新增</a-button>
     </div>
     <a-table :dataSource="dataSource" :columns="columns">
+      <template #bodyCell="{ column, text, record }">
+        <template v-if="column.key === 'action'"> 
+          <a>编辑</a>
+        <a-divider type="vertical" />
+        <a>预览</a>
+        <a-divider type="vertical" />
+        <a>导出</a>
+        </template>
+
+      </template>
       <!-- <a-table-column key="action" data-index="action">
         <template #default="c">编辑</template>
       </a-table-column> -->
@@ -19,7 +29,7 @@ import { h, ref } from "vue";
 const dataSource = ref([
   {
     id: 1,
-    pagename: "demo",
+    tablename: "demo",
     action: "123",
   },
 ]);
@@ -30,16 +40,13 @@ const columns = ref<TableProps["columns"]>([
     key: "id",
   },
   {
-    title: "页面名称",
-    dataIndex: "pagename",
-    key: "pagename",
+    title: "表名",
+    dataIndex: "tablename",
+    key: "tablename",
   },
   {
     title: "操作",
     key: "action",
-    customRender: (c) => {
-      return h("a", "编辑");
-    },
   },
 ]);
 </script>

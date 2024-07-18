@@ -7,6 +7,7 @@ import Layout from "../components/Layout/Layout.vue";
 import Enum from "../views/enum/index.vue"
 import Dict from "../views/dict/index.vue"
 import Generator from "../views/generator/index.vue"
+import GeneratorForm from "../views/generator/form/index.vue"
 import Config from "../views/config/index.vue"
 import PageEditor from "../views/generator/compenents/PageEditor.vue";
 export const constantRoutes: RouteRecordRaw[] = [
@@ -32,7 +33,14 @@ export const constantRoutes: RouteRecordRaw[] = [
         path: "generator",
         name: "generator",
         component:Generator,
-      }, {
+      },
+      {
+        path: "generator/form",
+        name: "generator_form",
+        component:GeneratorForm,
+      }, 
+      
+      {
         path: "generator/page/:id",
         name: "generator_page",
         component:PageEditor,

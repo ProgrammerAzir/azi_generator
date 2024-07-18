@@ -26,27 +26,27 @@ const route = useRoute()
 
 const selectedKeys = ref<string[]>([""]);
 
-const menuTree = ref([
-  {
-    label: "枚举类型",
-    key: "/enum",
-    icon: () => h(ProfileOutlined),
-  },
-  {
-    label: "字典管理",
-    icon: () => h(ReadOutlined),
-    key: "/dict",
-  },
-  {
-    label: "低代码编辑器",
-    icon: () => h(ToolOutlined),
-    key: "/generator",
-  },
-  {
-    label: "配置",
-    icon: () => h(SettingOutlined),
-    key: "/config",
-  },
+const menuTree = ref<any>([
+  // {
+  //   label: "枚举类型",
+  //   key: "/enum",
+  //   icon: () => h(ProfileOutlined),
+  // },
+  // {
+  //   label: "字典管理",
+  //   icon: () => h(ReadOutlined),
+  //   key: "/dict",
+  // },
+  // {
+  //   label: "低代码编辑器",
+  //   icon: () => h(ToolOutlined),
+  //   key: "/generator",
+  // },
+  // {
+  //   label: "配置",
+  //   icon: () => h(SettingOutlined),
+  //   key: "/config",
+  // },
 ]);
 const select:MenuProps['onSelect'] = ({ item, key, selectedKeys })=>{
   if(typeof key =='string')
@@ -54,7 +54,7 @@ const select:MenuProps['onSelect'] = ({ item, key, selectedKeys })=>{
 }
 watch(()=>route.path,()=>{  
 
-  const path = menuTree.value.find(item=>{
+  const path = menuTree.value.find((item: { key: string; })=>{
     return route.path.indexOf(item.key)>-1
   })
   console.log(path?.key);

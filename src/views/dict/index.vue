@@ -1,18 +1,24 @@
 <template>
   <div class="r">
-    <Drawer :title="'新增'">
-      <template #default="{onClose}">
+    <Drawer :title="'新增字典'">
+      <template #default="{ onClose }">
         <DictForm add @save="getDictDataSource(onClose)"></DictForm>
       </template>
       <template #open="{ onShow }">
-        <a-button @click="onShow" type="primary">新增</a-button></template>
+        <div class="r">
+          <a-button @click="onShow" type="primary">新增</a-button>
+        </div>
+      </template>
     </Drawer>
     <a-table :dataSource="dataSource" :columns="columns">
       <template #bodyCell="{ column, text, record }">
         <template v-if="column.key === 'action'">
-          <Drawer :title="'编辑'">
-            <template #default="{onClose}">
-              <DictForm :value="record" @save="getDictDataSource(onClose)"></DictForm>
+          <Drawer :title="'编辑字典'">
+            <template #default="{ onClose }">
+              <DictForm
+                :value="record"
+                @save="getDictDataSource(onClose)"
+              ></DictForm>
             </template>
             <template #open="{ onShow }"><a @click="onShow">编辑</a></template>
           </Drawer>
@@ -59,9 +65,9 @@ const columns = ref<TableProps["columns"]>([
 onMounted(async () => {
   getDictDataSource();
 });
-async function getDictDataSource(onClose?:Function) {
+async function getDictDataSource(onClose?: Function) {
   const res = await axios.get("/api/dict");
-  onClose?.()
+  onClose?.();
   dataSource.value = res.data.dict;
 }
 </script>

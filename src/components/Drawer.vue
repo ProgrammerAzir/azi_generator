@@ -4,7 +4,7 @@
     v-if="divshow"
 
     v-model:open="open"
-    width="700"
+    :width="props.width||700"
     placement="right"
     @after-open-change="afterOpenChange"
     destroyOnClose
