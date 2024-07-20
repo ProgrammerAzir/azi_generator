@@ -1,7 +1,7 @@
 <template>
   <div class="r">
     <h2>枚举类型</h2>
-    <a-table :columns="columns" :data-source="dataSource" >
+    <a-table :columns="columns" :data-source="dataSource" :pagination="false">
       <template #headerCell="{ column }">
         <template v-if="column.key === 'name'">
           <span>
@@ -23,8 +23,8 @@
         </template>
         <template v-else-if="column.key === 'action'">
           <span>
-            <a>编辑</a>
-            <a-divider type="vertical" />
+            <!-- <a>编辑</a>
+            <a-divider type="vertical" /> -->
             <a>生成字典</a>
 
           </span>

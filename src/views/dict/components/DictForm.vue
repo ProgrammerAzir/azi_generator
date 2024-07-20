@@ -5,10 +5,10 @@
     :label-col="{ style: { width: '50px' } }"
     @finish="onFinish"
   >
-    <a-form-item label="名称" name="name">
+    <a-form-item label="名称" name="name" :rules="[{required: true,message:'name is required!'}]">
       <a-input v-model:value="formState.name"></a-input>
     </a-form-item>
-    <a-form-item label="code" name="code">
+    <a-form-item label="code" name="code" :rules="[{required: true,message:'code is required!'}]">
       <a-input v-model:value="formState.code"></a-input>
     </a-form-item>
     <a-form-item label="type" name="type">
@@ -124,7 +124,8 @@ async function onFinish() {
 </script>
 <style scoped>
 .save-button {
-  position: absolute;
-  bottom: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 80%;
 }
 </style>
