@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "node":"16.20.2-18.*",
   "scripts": {
     "dev": "nodemon --watch server/**/*.ts --ignore **/basetype.ts --exec ts-node ./server/server.ts -P ./server/tsconfig.json",
     "build": "vue-tsc -b && vite build",
