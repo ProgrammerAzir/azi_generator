@@ -5,10 +5,18 @@
     :label-col="{ style: { width: '50px' } }"
     @finish="onFinish"
   >
-    <a-form-item label="名称" name="name" :rules="[{required: true,message:'name is required!'}]">
+    <a-form-item
+      label="名称"
+      name="name"
+      :rules="[{ required: true, message: '请输入名称' }]"
+    >
       <a-input v-model:value="formState.name"></a-input>
     </a-form-item>
-    <a-form-item label="code" name="code" :rules="[{required: true,message:'code is required!'}]">
+    <a-form-item
+      label="code"
+      name="code"
+      :rules="[{ required: true, message: '请输入code' }]"
+    >
       <a-input v-model:value="formState.code"></a-input>
     </a-form-item>
     <a-form-item label="type" name="type">
@@ -24,7 +32,7 @@
       :pagination="false"
     >
       <template #bodyCell="{ column, text, record, index }">
-        <template v-if="column.key === 'lable'" >
+        <template v-if="column.key === 'lable'">
           <span v-html="record.lable"></span>
         </template>
         <template v-if="column.key === 'action'">
@@ -111,8 +119,8 @@ function del(index: number) {
 async function onFinish() {
   if (props.add) {
     await axios.post("/api/dict", {
-    add: formState,
-  });
+      add: formState,
+    });
     emit("save");
     return;
   }
@@ -124,8 +132,7 @@ async function onFinish() {
 </script>
 <style scoped>
 .save-button {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 80%;
+  position: absolute;
+  bottom: 20px;
 }
 </style>

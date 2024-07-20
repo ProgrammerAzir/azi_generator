@@ -1,8 +1,8 @@
 <template>
   <slot name="open" :onShow="onShow"></slot>
   <a-drawer
+    :footer-style="{ textAlign: 'right' ,height:'70px'}"
     v-if="divshow"
-
     v-model:open="open"
     :width="props.width||700"
     placement="right"
@@ -10,6 +10,7 @@
     destroyOnClose
     :title="props?.title"
   >
+    <template #footer v-if="props.title=='编辑字典'"></template>
     <slot :onClose="()=>open=false"></slot>
   </a-drawer>
 </template>
