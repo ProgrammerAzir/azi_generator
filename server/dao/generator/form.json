@@ -3,6 +3,16 @@
     "id": 1,
     "name": "订单管理",
     "tablename":"demo",
+    "pagination":true,
+    "row_search":[
+      {
+        "key": "created_at",
+        "lable": "创建时间",
+        "type": "date",
+        "component":"Input",
+        "dict_code":null
+      }
+    ],
     "row": [
       {
         "key": "created_at",

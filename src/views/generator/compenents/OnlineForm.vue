@@ -78,15 +78,18 @@ const props = defineProps<{
 }>();
 const emit = defineEmits(["save"]);
 const formState = reactive<DataItem>({
-  ...props.value,
+  id: undefined,
   name: "",
   tablename: "",
   description: "",
+  pagination: false,
+  row_search: [],
   row: [],
   add_form: [],
   edit_form: [],
-  detail: [],
+  detail: []
 });
+
 function onFinish() {
   emit("save", formState);
 }

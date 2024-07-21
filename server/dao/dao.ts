@@ -6,7 +6,6 @@ const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 import {
   Project,
   TypeChecker,
-  VariableDeclarationKind,
   SourceFile,
   ts,
   Type,
@@ -23,7 +22,6 @@ class LoadType {
   loadToPath(src: string) {
     this.sourceFile = this.project.addSourceFileAtPath(src);
     return this
-    // const sourceFile = this.project.getSourceFiles()[0]
   }
   getDatabaseDeclaration() {
     if(!this.sourceFile) return 
@@ -249,4 +247,4 @@ const JsonFile = new FileManager({
 const typeAst = new LoadType().loadToPath(path.join(__dirname,"/basetype.ts"))
 // console.log(typeAst.getTypeEnumsOfObject());
 
-export { JsonFile,typeAst, FileManager  };
+export { JsonFile,typeAst, FileManager };
